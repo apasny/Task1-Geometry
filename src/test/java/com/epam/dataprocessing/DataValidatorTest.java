@@ -1,4 +1,4 @@
-package com.epam.datavalidator;
+package com.epam.dataprocessing;
 
 import org.junit.Assert;
 import org.junit.Test;

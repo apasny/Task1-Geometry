@@ -1,4 +1,4 @@
-package com.epam.datareader;
+package com.epam.dataprocessing;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -11,7 +11,7 @@ import java.util.List;
 public class DataReaderTest {
 
     @Test
-    public void testReadLinesFromFile(){
+    public void testReadLinesFromFile() throws DataProcessingException {
         //given
         DataReader dataReader = new DataReader(){};
         File file = new File("src/test/resources/input.txt");
