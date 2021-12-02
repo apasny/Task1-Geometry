@@ -1,7 +1,5 @@
 package com.epam.data;
 
-import java.util.List;
-
 public interface Observable {
 
     void attach(Observer observer);

@@ -19,6 +19,10 @@ public class ConeStorage implements Observer {
     private ConeStorage() {
     }
 
+    public Map<Integer, Parameters> getCalculatedVolumeAndArea() {
+        return calculatedVolumeAndArea;
+    }
+
     @Override
     public void update(ConeObservable cone){
         double volume = calculator.calculateVolume(cone);

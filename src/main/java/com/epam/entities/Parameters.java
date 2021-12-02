@@ -17,4 +17,12 @@ public class Parameters {
     public double getArea() {
         return area;
     }
+
+    @Override
+    public String toString() {
+        return "Parameters{" +
+                "volume=" + volume +
+                ", area=" + area +
+                '}';
+    }
 }
