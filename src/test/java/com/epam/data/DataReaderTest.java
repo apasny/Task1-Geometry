@@ -1,10 +1,9 @@
-package com.epam.dataprocessing;
+package com.epam.data;
 
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.io.File;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -23,6 +22,18 @@ public class DataReaderTest {
 
         //then
         Assert.assertEquals(expected,result);
+
+    }
+
+    @Test(expected = DataProcessingException.class)
+    public void testReadShouldThrowException() throws DataProcessingException {
+        //given
+        DataReader dataReader = new DataReader(){};
+        File file = new File("");
+        String absolutePath = file.getAbsolutePath();
+
+        //when
+        dataReader.read(absolutePath);
 
     }
 

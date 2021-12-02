@@ -1,4 +1,4 @@
-package com.epam.dataprocessing;
+package com.epam.data;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

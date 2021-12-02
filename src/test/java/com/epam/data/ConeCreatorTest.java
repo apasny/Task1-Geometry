@@ -1,4 +1,4 @@
-package com.epam.dataprocessing;
+package com.epam.data;
 
 import com.epam.entities.Apex;
 import com.epam.entities.BaseCenter;

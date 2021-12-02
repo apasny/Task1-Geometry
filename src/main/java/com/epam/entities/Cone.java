@@ -2,7 +2,7 @@ package com.epam.entities;
 
 import java.util.Objects;
 
-public final class Cone {
+public class Cone {
 
     private BaseCenter baseCenter;
     private Apex apex;
@@ -14,12 +14,12 @@ public final class Cone {
         this.apex = apex;
     }
 
-    public void setApex(Apex apex) {
-        this.apex = apex;
-    }
-
     public void setBaseCenter(BaseCenter baseCenter) {
         this.baseCenter = baseCenter;
+    }
+
+    public void setApex(Apex apex) {
+        this.apex = apex;
     }
 
     public void setRadius(double radius) {

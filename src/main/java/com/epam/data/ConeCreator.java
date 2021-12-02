@@ -1,4 +1,4 @@
-package com.epam.dataprocessing;
+package com.epam.data;
 
 import com.epam.entities.Apex;
 import com.epam.entities.BaseCenter;
@@ -7,11 +7,12 @@ import com.epam.logic.Calculator;
 import org.apache.log4j.Logger;
 
 public class ConeCreator {
+
+    private final Calculator calculator = new Calculator();
+
     private static final Logger log = Logger.getLogger(ConeCreator.class);
 
     public Cone create(String line) {
-
-        Calculator calculator = new Calculator();
 
         String splitter = " ";
         String[] splittedLine = line.split(splitter);
