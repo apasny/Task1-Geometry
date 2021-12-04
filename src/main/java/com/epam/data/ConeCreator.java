@@ -8,8 +8,6 @@ import org.apache.log4j.Logger;
 
 public class ConeCreator {
 
-    private final Calculator calculator = new Calculator();
-
     private static final Logger log = Logger.getLogger(ConeCreator.class);
 
     public Cone create(String line) {
@@ -25,14 +23,12 @@ public class ConeCreator {
         double apexY = Double.parseDouble(splittedLine[5]);
         double apexZ = Double.parseDouble(splittedLine[6]);
 
-        if (calculator.isCone(radius, baseCenterX, baseCenterY, baseCenterZ, apexX, apexY, apexZ)) {
-            BaseCenter baseCenter = new BaseCenter(baseCenterX, baseCenterY, baseCenterZ);
-            Apex apex = new Apex(apexX, apexY, apexZ);
-            return new Cone(baseCenter, radius, apex);
-        } else {
-            log.error("Shape is not a cone");
-            throw new RuntimeException("Not a cone");
-        }
+        boolean isCone = Calculator.isCone(radius, baseCenterX, baseCenterY, baseCenterZ, apexX, apexY, apexZ);
+
+        BaseCenter baseCenter = new BaseCenter(baseCenterX, baseCenterY, baseCenterZ);
+        Apex apex = new Apex(apexX, apexY, apexZ);
+
+        return isCone ? new Cone(baseCenter, radius, apex):null;
     }
 }
 

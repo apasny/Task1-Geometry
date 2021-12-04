@@ -9,7 +9,7 @@ import org.junit.Test;
 public class ConeCreatorTest {
 
     @Test
-    public void testCreateConeShouldCreateCone () {
+    public void testCreateConeShouldCreateConeIfShapeIsACone () {
         //given
         ConeCreator coneCreator = new ConeCreator(){};
         BaseCenter baseCenter = new BaseCenter(2,3,4);
@@ -22,7 +22,18 @@ public class ConeCreatorTest {
 
         //then
         Assert.assertEquals(expected, result);
+    }
 
+    @Test
+    public void testCreateConeShouldReturnNullIfShapeIsNotACone () {
+        //given
+        ConeCreator coneCreator = new ConeCreator(){};
+
+        //when
+        Cone result = coneCreator.create("0 2.0 3.0 4.0 5.0 6.0 7.0");
+
+        //then
+        Assert.assertNull(result);
     }
 
 }

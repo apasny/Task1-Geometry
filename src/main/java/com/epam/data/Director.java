@@ -22,15 +22,21 @@ public class Director {
     }
 
     public List<Cone> processData(String path) throws DataProcessingException {
-        log.info("Data processing started");
 
+        log.info("Data processing started");
         List<String> lines = dataReader.read(path);
+        log.info("Data has been read from file");
         List<Cone> listCone = new ArrayList<>();
 
         for (String line : lines) {
             if (dataValidator.validate(line)) {
+                log.info("Data valid");
                 Cone cone = coneCreator.create(line);
-                listCone.add(cone);
+                log.info("Cone created");
+                if(cone!=null) {
+                    listCone.add(cone);
+                    log.info("Cone added to list");
+                }
             }
         }
         return listCone;

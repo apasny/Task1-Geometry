@@ -1,5 +1,7 @@
 package com.epam.entities;
 
+import java.util.Objects;
+
 public class Parameters {
 
     private final double volume;
@@ -16,6 +18,19 @@ public class Parameters {
 
     public double getArea() {
         return area;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Parameters that = (Parameters) o;
+        return Double.compare(that.volume, volume) == 0 && Double.compare(that.area, area) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(volume, area);
     }
 
     @Override

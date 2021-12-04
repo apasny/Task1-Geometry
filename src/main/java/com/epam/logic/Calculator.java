@@ -19,11 +19,18 @@ public class Calculator {
     }
 
     public double calculateConeGeneratrix(Cone cone) {
-        return Math.sqrt(Math.pow(cone.getRadius(), 2) + Math.pow(this.calculateConeHeight(cone), 2));
+        return Math.sqrt(Math.pow(cone.getRadius(), 2) + Math.pow(calculateConeHeight(cone), 2));
     }
 
-    public boolean isCone(double radius, double baseCenterX, double baseCenterY, double baseCenterZ, double apexX, double apexY, double apexZ) {
-        return radius > 0 && baseCenterX != apexX && baseCenterY != apexY && baseCenterZ != apexZ;
+    public static boolean isCone(double radius, double baseCenterX, double baseCenterY, double baseCenterZ, double apexX, double apexY, double apexZ) {
+        if(radius > 0) {
+            if (baseCenterX != apexX) {
+                return true;
+            } else if (baseCenterY != apexY) {
+                   return true;
+            } else return baseCenterZ != apexZ;
+        }
+        return false;
     }
 
     public boolean isConeBaseOnCoordinatePlane(Cone cone) {
