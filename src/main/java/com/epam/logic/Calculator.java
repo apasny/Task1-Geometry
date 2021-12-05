@@ -22,17 +22,6 @@ public class Calculator {
         return Math.sqrt(Math.pow(cone.getRadius(), 2) + Math.pow(calculateConeHeight(cone), 2));
     }
 
-    public static boolean isCone(double radius, double baseCenterX, double baseCenterY, double baseCenterZ, double apexX, double apexY, double apexZ) {
-        if(radius > 0) {
-            if (baseCenterX != apexX) {
-                return true;
-            } else if (baseCenterY != apexY) {
-                   return true;
-            } else return baseCenterZ != apexZ;
-        }
-        return false;
-    }
-
     public boolean isConeBaseOnCoordinatePlane(Cone cone) {
         BaseCenter baseCenter = cone.getBaseCenter();
         Apex apex = cone.getApex();
