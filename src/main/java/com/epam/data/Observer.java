@@ -1,9 +1,9 @@
 package com.epam.data;
 
-import com.epam.entities.ConeObservable;
+import com.epam.entities.ConeIdentifier;
 
 public interface Observer {
 
-    void update(ConeObservable cone);
+    void update(ConeIdentifier cone);
 
 }

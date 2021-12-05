@@ -1,6 +1,6 @@
 package com.epam.data;
 
-import com.epam.entities.ConeObservable;
+import com.epam.entities.ConeIdentifier;
 import com.epam.entities.Parameters;
 import com.epam.logic.Calculator;
 
@@ -24,7 +24,7 @@ public class ConeStorage implements Observer {
     }
 
     @Override
-    public void update(ConeObservable cone){
+    public void update(ConeIdentifier cone){
         double volume = calculator.calculateVolume(cone);
         double area = calculator.calculateArea(cone);
         calculatedVolumeAndArea.put(cone.getId(),new Parameters(volume,area));

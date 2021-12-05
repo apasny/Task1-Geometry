@@ -6,12 +6,12 @@ import com.epam.data.Observer;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ConeObservable extends Cone implements Observable {
+public class ConeIdentifier extends Cone implements Observable {
 
     private final int id;
     private final List<Observer> observers = new ArrayList<>();
 
-    public ConeObservable(int id, BaseCenter baseCenter, double radius, Apex apex) {
+    public ConeIdentifier(int id, BaseCenter baseCenter, double radius, Apex apex) {
         super(baseCenter, radius, apex);
         this.id = id;
     }
