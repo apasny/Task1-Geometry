@@ -5,13 +5,14 @@ import com.epam.data.Observer;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
-public class ConeIdentifier extends Cone implements Observable {
+public class ConeIdentifiable extends Cone implements Observable {
 
     private final int id;
     private final List<Observer> observers = new ArrayList<>();
 
-    public ConeIdentifier(int id, BaseCenter baseCenter, double radius, Apex apex) {
+    public ConeIdentifiable(int id, BaseCenter baseCenter, double radius, Apex apex) {
         super(baseCenter, radius, apex);
         this.id = id;
     }
@@ -47,5 +48,19 @@ public class ConeIdentifier extends Cone implements Observable {
         for (Observer observer:observers) {
             observer.update(this);
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        ConeIdentifiable that = (ConeIdentifiable) o;
+        return id == that.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), id);
     }
 }

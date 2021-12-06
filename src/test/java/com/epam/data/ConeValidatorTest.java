@@ -1,6 +1,5 @@
 package com.epam.data;
 
-import com.epam.logic.Calculator;
 import org.junit.Assert;
 import org.junit.Test;
 

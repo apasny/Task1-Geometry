@@ -14,7 +14,7 @@ public class ConeStorageTest {
         double radius = 1;
         BaseCenter baseCenter = new BaseCenter(2,3,4);
         Apex apex = new Apex(5,6,7);
-        ConeIdentifier cone = new ConeIdentifier(id,baseCenter,radius,apex);
+        ConeIdentifiable cone = new ConeIdentifiable(id,baseCenter,radius,apex);
         Parameters parameters = new Parameters(5.441398,19.765338);
 
         ConeStorage.getInstance().update(cone);
