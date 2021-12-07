@@ -36,6 +36,12 @@ public class ConeRepositoryImpl implements ConeRepository {
 
     @Override
     public List<ConeIdentifiable> sort(Comparator<ConeIdentifiable> comparator) {
-        return null;
+
+        List<ConeIdentifiable> cones = new ArrayList<>(store.values());
+
+        cones.sort(comparator);
+
+        return cones;
     }
+
 }

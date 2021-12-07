@@ -13,7 +13,7 @@ public class Director {
     private final ConeCreator coneCreator;
     private final DataValidator dataValidator;
 
-    Director(DataReader dataReader, ConeCreator coneCreator, DataValidator dataValidator) {
+    public Director(DataReader dataReader, ConeCreator coneCreator, DataValidator dataValidator) {
         this.dataReader = dataReader;
         this.coneCreator = coneCreator;
         this.dataValidator = dataValidator;

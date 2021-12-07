@@ -3,9 +3,9 @@ package com.epam.logic;
 import com.epam.entities.Apex;
 import com.epam.entities.BaseCenter;
 import com.epam.entities.Cone;
+import com.epam.entities.Octant;
 import org.junit.Assert;
 import org.junit.Test;
-import org.mockito.Mockito;
 
 public class CalculatorTest {
 
@@ -73,4 +73,38 @@ public class CalculatorTest {
         //then
         Assert.assertEquals(5.441398,result,0.000001);
     }
+
+    @Test
+    public void testDefineOctantShouldDefineCorrectOctant(){
+        //given
+        Calculator calculator = new Calculator();
+
+        double x = 1;
+        double y = -1;
+        double z = 1;
+
+        //when
+        Octant result = calculator.defineOctant(x,y,z);
+
+        //then
+        Assert.assertEquals(Octant.FOURTH,result);
+    }
+
+    @Test
+    public void testIsCrossingPlaneShouldReturnTrueIfBaseAndApexInDifferentOctant(){
+        //given
+        Calculator calculator = new Calculator();
+
+        double radius = 1;
+        BaseCenter baseCenter = new BaseCenter(2,3,4);
+        Apex apex = new Apex(-5,-6,-7);
+        Cone cone = new Cone(baseCenter,radius,apex);
+
+        //when
+        boolean result = calculator.isCrossingPlane(cone);
+
+        //then
+        Assert.assertTrue(result);
+    }
+
 }
