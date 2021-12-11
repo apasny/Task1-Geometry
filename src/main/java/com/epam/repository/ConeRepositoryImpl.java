@@ -6,7 +6,7 @@ import java.util.*;
 
 public class ConeRepositoryImpl implements ConeRepository {
 
-    private final Map<Integer, ConeIdentifiable> store = new HashMap<>();
+    private final Map<UUID, ConeIdentifiable> store = new HashMap<>();
 
     @Override
     public void add(ConeIdentifiable cone) {

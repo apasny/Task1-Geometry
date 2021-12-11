@@ -43,7 +43,7 @@ public class Cone {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Cone cone = (Cone) o;
-        return Double.compare(cone.radius, radius) == 0 && Objects.equals(baseCenter, cone.baseCenter) && Objects.equals(apex, cone.apex);
+        return Double.compare(cone.radius, radius) == 0 && baseCenter.equals(cone.baseCenter) && apex.equals(cone.apex);
     }
 
     @Override

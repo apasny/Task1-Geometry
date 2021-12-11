@@ -1,4 +1,4 @@
-package com.epam.data;
+package com.epam.observer;
 
 import com.epam.entities.ConeIdentifiable;
 import com.epam.entities.Parameters;
@@ -6,6 +6,7 @@ import com.epam.logic.Calculator;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 
 public class ConeStorage implements Observer {
@@ -14,12 +15,12 @@ public class ConeStorage implements Observer {
 
     private final Calculator calculator = new Calculator();
 
-    private final Map<Integer, Parameters> calculatedVolumeAndArea = new HashMap<>();
+    private final Map<UUID, Parameters> calculatedVolumeAndArea = new HashMap<>();
 
     private ConeStorage() {
     }
 
-    public Map<Integer, Parameters> getCalculatedVolumeAndArea() {
+    public Map<UUID, Parameters> getCalculatedVolumeAndArea() {
         return calculatedVolumeAndArea;
     }
 

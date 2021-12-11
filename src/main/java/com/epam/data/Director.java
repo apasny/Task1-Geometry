@@ -3,11 +3,15 @@ package com.epam.data;
 import com.epam.entities.Cone;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.epam.entities.ConeIdentifiable;
 import org.apache.log4j.Logger;
 
 public class Director {
 
     private static final Logger LOGGER = Logger.getLogger(Director.class);
+
+    private final IdGenerator idGenerator = new IdGenerator();
 
     private final DataReader dataReader;
     private final ConeCreator coneCreator;
@@ -19,20 +23,20 @@ public class Director {
         this.dataValidator = dataValidator;
     }
 
-    public List<Cone> processData(String path) throws DataProcessingException {
+    public List<ConeIdentifiable> processData(String path) throws DataProcessingException {
 
         LOGGER.info("Data processing started");
         List<String> lines = dataReader.read(path);
         LOGGER.info("Data has been read from file");
-        List<Cone> listCone = new ArrayList<>();
+        List<ConeIdentifiable> listCone = new ArrayList<>();
 
         for (String line : lines) {
             if (dataValidator.validate(line)) {
                 LOGGER.info("Data valid");
-                Cone cone = coneCreator.create(line);
+                ConeIdentifiable coneIdentifiable = coneCreator.create(line);
                 LOGGER.info("Cone created");
-                if (cone != null) {
-                    listCone.add(cone);
+                if (coneIdentifiable != null) {
+                    listCone.add(coneIdentifiable);
                     LOGGER.info("Cone added to list");
                 }
             }

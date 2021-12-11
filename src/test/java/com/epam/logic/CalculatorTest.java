@@ -107,4 +107,21 @@ public class CalculatorTest {
         Assert.assertTrue(result);
     }
 
+    @Test
+    public void testIsConeBaseOnCoordinatePlaneShouldReturnTrueIfBaseOnPlane(){
+        //given
+        Calculator calculator = new Calculator();
+
+        double radius = 1;
+        BaseCenter baseCenter = new BaseCenter(5,5,0);
+        Apex apex = new Apex(5,5,1);
+        Cone cone = new Cone(baseCenter,radius,apex);
+
+        //when
+        boolean result = calculator.isConeBaseOnCoordinatePlane(cone);
+
+        //then
+        Assert.assertTrue(result);
+    }
+
 }

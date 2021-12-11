@@ -4,11 +4,11 @@ import com.epam.entities.ConeIdentifiable;
 
 import java.util.Comparator;
 
-public class SortById implements Comparator<ConeIdentifiable> {
+public class SortByCoordinateZ implements Comparator<ConeIdentifiable> {
 
     @Override
     public int compare(ConeIdentifiable cone1, ConeIdentifiable cone2) {
-        return cone1.getId().compareTo(cone2.getId());
+        return (int)(cone1.getBaseCenter().getZ() - cone2.getBaseCenter().getZ());
     }
 
 }

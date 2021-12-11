@@ -2,7 +2,7 @@ package com.epam.entities;
 
 import java.util.Objects;
 
-public final class BaseCenter {
+public class BaseCenter {
 
     private final double x;
     private final double y;
@@ -39,7 +39,12 @@ public final class BaseCenter {
         return Objects.hash(x, y, z);
     }
 
+    @Override
     public String toString() {
-        return "{x=" + this.x + ", y=" + this.y + ", z=" + this.z + '}';
+        return "BaseCenter{" +
+                "x=" + x +
+                ", y=" + y +
+                ", z=" + z +
+                '}';
     }
 }

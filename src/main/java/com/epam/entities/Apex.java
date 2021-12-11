@@ -2,7 +2,7 @@ package com.epam.entities;
 
 import java.util.Objects;
 
-public final class Apex {
+public class Apex {
 
     private final double x;
     private final double y;

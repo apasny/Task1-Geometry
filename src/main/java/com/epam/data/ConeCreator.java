@@ -3,12 +3,14 @@ package com.epam.data;
 import com.epam.entities.Apex;
 import com.epam.entities.BaseCenter;
 import com.epam.entities.Cone;
+import com.epam.entities.ConeIdentifiable;
 
 public class ConeCreator {
 
     private final ConeValidator coneValidator = new ConeValidator();
+    private final IdGenerator idGenerator = new IdGenerator();
 
-    public Cone create(String line) {
+    public ConeIdentifiable create(String line) {
 
         String splitter = " ";
         String[] splittedLine = line.split(splitter);
@@ -25,8 +27,9 @@ public class ConeCreator {
 
         BaseCenter baseCenter = new BaseCenter(baseCenterX, baseCenterY, baseCenterZ);
         Apex apex = new Apex(apexX, apexY, apexZ);
+        Cone cone = new Cone(baseCenter, radius, apex);
 
-        return isCone ? new Cone(baseCenter, radius, apex):null;
+        return isCone ? new ConeIdentifiable(idGenerator.generate(), cone) : null;
     }
 }
 

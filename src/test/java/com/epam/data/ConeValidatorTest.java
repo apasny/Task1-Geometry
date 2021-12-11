@@ -6,7 +6,7 @@ import org.junit.Test;
 public class ConeValidatorTest {
 
     @Test
-    public void testIsConeShouldReturnTrueIfDateValid(){
+    public void testIsConeShouldReturnTrueIfDataValid(){
         //given
         ConeValidator coneValidator = new ConeValidator();
 
@@ -30,7 +30,7 @@ public class ConeValidatorTest {
         //given
         ConeValidator coneValidator = new ConeValidator();
 
-        double radius = 0;
+        double radius = -1;
         double baseCenterX = 2;
         double baseCenterY = 3;
         double baseCenterZ = 4;

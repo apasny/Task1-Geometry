@@ -1,4 +1,4 @@
-package com.epam.data;
+package com.epam.observer;
 
 public interface Observable {
 

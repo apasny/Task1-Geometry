@@ -13,7 +13,7 @@ public class DataReaderTest {
     public void testReadLinesFromFile() throws DataProcessingException {
         //given
         DataReader dataReader = new DataReader(){};
-        File file = new File("src/test/resources/input.txt");
+        File file = new File("./src/test/resources/input.txt");
         String absolutePath = file.getAbsolutePath();
 
         //when

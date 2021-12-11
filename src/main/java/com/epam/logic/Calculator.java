@@ -25,12 +25,12 @@ public class Calculator {
     public boolean isConeBaseOnCoordinatePlane(Cone cone) {
         BaseCenter baseCenter = cone.getBaseCenter();
         Apex apex = cone.getApex();
-        if (baseCenter.getX() == 0 && baseCenter.getY() == apex.getY() && baseCenter.getZ() == apex.getZ()) {
+        if (baseCenter.getX() == 0 && baseCenter.getY() == apex.getY() && baseCenter.getZ() == apex.getZ() && apex.getX()!=0) {
             return true;
-        } else if (baseCenter.getY() == 0 && baseCenter.getX() == apex.getX() && baseCenter.getZ() == apex.getZ()) {
+        } else if (baseCenter.getY() == 0 && baseCenter.getX() == apex.getX() && baseCenter.getZ() == apex.getZ() && apex.getY()!=0) {
             return true;
         } else {
-            return baseCenter.getZ() == 0 && baseCenter.getX() == apex.getX() && baseCenter.getY() == apex.getY();
+            return baseCenter.getZ() == 0 && baseCenter.getX() == apex.getX() && baseCenter.getY() == apex.getY() && apex.getZ()!=0;
         }
     }
 
