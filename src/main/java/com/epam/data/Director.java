@@ -38,6 +38,8 @@ public class Director {
                 if (coneIdentifiable != null) {
                     listCone.add(coneIdentifiable);
                     LOGGER.info("Cone added to list");
+                } else {
+                    LOGGER.warn("SHAPE IS NOT A CONE!");
                 }
             }
         }

@@ -1,9 +1,6 @@
 package com.epam.logic;
 
-import com.epam.entities.Apex;
-import com.epam.entities.BaseCenter;
-import com.epam.entities.Cone;
-import com.epam.entities.Octant;
+import com.epam.entities.*;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -122,6 +119,42 @@ public class CalculatorTest {
 
         //then
         Assert.assertTrue(result);
+    }
+
+    @Test
+    public void testIsHeightOrthogonalToPlaneShouldReturnTrue(){
+        //given
+        Calculator calculator = new Calculator();
+
+        double radius = 1;
+        BaseCenter baseCenter = new BaseCenter(5,5,5);
+        Apex apex = new Apex(0,0,10);
+        Cone cone = new Cone(baseCenter,radius,apex);
+
+        System.out.println(calculator.isHeightOrthogonalToPlane(cone));
+
+        //when
+        Axis result = calculator.isHeightOrthogonalToPlane(cone);
+
+        //then
+        Assert.assertEquals(Axis.OZ,result);
+    }
+
+    @Test
+    public void testCalculateConeVolumeRatioShouldReturnRatio(){
+        //given
+        Calculator calculator = new Calculator();
+
+        double radius = 1;
+        BaseCenter baseCenter = new BaseCenter(5,5,5);
+        Apex apex = new Apex(0,0,-5);
+        Cone cone = new Cone(baseCenter,radius,apex);
+
+        //when
+        double result = calculator.calculateConeVolumeRatio(cone);
+
+        //then
+        Assert.assertEquals(0.184749,result,0.0001);
     }
 
 }
